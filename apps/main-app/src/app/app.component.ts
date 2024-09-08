@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { RouterOutlet } from '@angular/router';
+import { DynamicComponent } from './dynamic.component';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  imports: [
+    RouterOutlet,
+    DynamicComponent
+  ],
+  selector: 'df-root',
+  template: `
+  <df-dynamic ngSkipHydration />
+
+  `,
+  styles: '',
 })
 export class AppComponent {
   title = 'main-app';
